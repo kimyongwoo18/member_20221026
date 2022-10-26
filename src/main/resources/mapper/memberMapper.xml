@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="member">
+    <insert id="save" parameterType="memberDTO">
+        insert into member_table(memberEmail, memberPassword, memberName, memberAge, memberMobile)
+        values(#{memberEmail},#{memberPassword},#{memberName},#{memberAge},#{memberMobile})
+    </insert>
+
+    <select id="login" parameterType="memberDTO" resultType="memberDTO">
+        select * from member_table where memberEmail = #{memberEmail} and memberPassword = #{memberPassword}
+    </select>
+
+    <select id="findAll" resultType="memberDTO">
+        select * from member_table;
+    </select>
+
+    <select id="findById" parameterType="Long" resultType="memberDTO">
+        select * from member_table where id = #{id};
+    </select>
+
+    <update id="updatePassword" parameterType="memberDTO">
+        update member_table set memberPassword = #{memberPassword} where id = #{id};
+    </update>
+</mapper>
