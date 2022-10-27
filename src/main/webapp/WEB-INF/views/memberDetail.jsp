@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <h2>${member.memberName}님 조회결과</h2>
+  <h3>${member.memberName}님 조회결과</h3>
   회원 번호 : ${member.id}<br>
   회원 이메일 : ${member.memberEmail}<br>
   회원 비밀번호 : ${member.memberPassword}<br>

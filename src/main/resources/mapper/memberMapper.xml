@@ -15,14 +15,14 @@
     </select>
 
     <select id="findAll" resultType="memberDTO">
-        select * from member_table;
+        select * from member_table
     </select>
 
     <select id="findById" parameterType="Long" resultType="memberDTO">
-        select * from member_table where id = #{id};
+        select * from member_table where id = #{id}
     </select>
 
     <update id="updatePassword" parameterType="memberDTO">
-        update member_table set memberPassword = #{memberPassword} where id = #{id};
+        update member_table set memberPassword = #{memberPassword} where id = #{id}
     </update>
 </mapper>

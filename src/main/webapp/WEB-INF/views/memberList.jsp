@@ -13,25 +13,46 @@
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
-
-<table>
+<div class="container">
+<table class="table table-striped table-hover">
     <tr>
+        <th>회원 id</th>
         <th>회원이메일</th>
         <th>회원이름</th>
+        <th>회원비밀번호</th>
+        <th>회원나이</th>
+        <th>회원전화번호</th>
+        <th>조회</th>
     </tr>
 <c:forEach items="${memberList}" var="member">
     <tr>
         <td>
-         <a href="/member?id=${member.id}"> ${member.memberEmail}</a>
+         <a href="/member?id=${member.id}"> ${member.id}</a>
+        </td>
+        <td>
+        <a href="/member?id=${member.id}"> ${member.memberEmail}</a>
         </td>
 
         <td>
-        <a href="/member?id=${member.id}"> ${member.memberName}</a>
+            <a href="/member?id=${member.id}"> ${member.memberName}</a>
         </td>
+        <td>
+            <a href="/member?id=${member.id}"> ${member.memberPassword}</a>
+        </td>
+        <td>
+            <a href="/member?id=${member.id}"> ${member.memberAge}</a>
+        </td>
+        <td>
+        <a href="/member?id=${member.id}"> ${member.memberMobile}</a>
+        </td>
+        <td>
+            <a href="/member?id=${member.id}">조회</a>
+        </td>
+        <%--조회라고 따로 주거나 그냥 a태그를 이용해서 member.*** 를 클릭해서 갈 수 있게 한다.--%>
     </tr>
 </c:forEach>
 </table>
 
-
+</div>
 </body>
 </html>
