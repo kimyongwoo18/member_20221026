@@ -68,9 +68,10 @@ public class MemberController {
     public String findById(@RequestParam("id") Long id,Model model){
         MemberDTO memberDTO = memberService.findById(id);
         model.addAttribute("member", memberDTO);
-
         return"memberDetail";
     }
+
+
     /*update 로그인을 하고 나서 update 와 delete를 할 수 있게 하겠다.
     * 해당 id 를 타고넘어가서*/
 
