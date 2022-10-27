@@ -9,10 +9,28 @@
 <html>
 <head>
     <title>index.jsp</title>
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
-    <a href="/save" class="form-control">회원가입</a><br>
-    <a href="/login" class="form-control">>로그인페이지</a><br>
-    <a href="/members" class="form-control">>회원목록출력</a><br>
+
+        <a href="/save" class="form-control">회원가입</a><br>
+        <a href="/login" class="form-control">로그인</a><br>
+        <a href="/members" class="form-control">회원목록</a><br>
+<button class="btn btn-primary" onclick="saveFn()">회원가입</button>
+<button class="btn btn-danger" onclick="loginFn()">로그인</button>
+<button class="btn btn-dark" onclick="listFn()">회원목록</button>
 </body>
+<script>
+    /*자바스크립트를 이용해서 get방식으로 주소를 요청하는 방법*/
+    const saveFn = () =>  {
+        location.href = "/save";
+    }
+    const loginFn = () => {
+        location.href = "/login";
+    }
+    const listFn = () => {
+        location.href = "/members";
+    }
+
+</script>
 </html>
