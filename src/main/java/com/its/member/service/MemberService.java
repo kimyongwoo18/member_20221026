@@ -38,4 +38,13 @@ public class MemberService {
     public MemberDTO updatePassword(MemberDTO memberDTO) {
         return memberRepository.updatePassword(memberDTO);
     }
+
+    public boolean delete(Long id) {
+        int deleteResult = memberRepository.delete(id);
+        if(deleteResult != 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

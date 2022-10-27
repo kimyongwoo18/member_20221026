@@ -78,10 +78,25 @@ public class MemberController {
 
 /*전체정보 갖고 간다.*/
 
-    @GetMapping("/update")
-    public String updateForm(@RequestParam("id") Long id, Model model){
-    model.addAttribute("id", id);
-        return "memberUpdate";
+    /*
+    * 메서드 이름 : delete()
+    * 매개변수 : Long id
+    * 리턴 : boolean */
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id") Long id, Model model){
+        boolean deleteResult = memberService.delete(id);
+        //1. 삭제 후 목록을 DB에서 가져오고 memberList.jsp로 간다.
+        /*List<MemberDTO> memberDTOList = memberService.findAll();
+        model.addAttribute("memberList", memberDTOList);*/
+        //2. redirect 방식을 이용하여 /members 주소 요청
+        /*return"redirect:/members";*/
+
+        if(deleteResult){
+            return "redirect:/members";
+        }else{
+
+            return "index";
+        }
     }
 
     @PostMapping("/update")

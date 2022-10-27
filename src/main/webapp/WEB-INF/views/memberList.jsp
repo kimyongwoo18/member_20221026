@@ -23,6 +23,7 @@
         <th>회원나이</th>
         <th>회원전화번호</th>
         <th>조회</th>
+        <th>삭제</th>
     </tr>
 <c:forEach items="${memberList}" var="member">
     <tr>
@@ -48,6 +49,9 @@
         <td>
             <a href="/member?id=${member.id}">조회</a>
         </td>
+        <td>
+            <button class="btn btn-danger" onclick="deleteMember('${member.id}')">삭제</button>
+        </td>
         <%--조회라고 따로 주거나 그냥 a태그를 이용해서 member.*** 를 클릭해서 갈 수 있게 한다.--%>
     </tr>
 </c:forEach>
@@ -55,4 +59,12 @@
 
 </div>
 </body>
+<script>
+    const deleteMember = (clickedId) => {
+        <%--console.log('${memberList}');--%>
+        console.log("클릭한 id값: "+ clickedId);
+        location.href="/delete?id="+ clickedId;
+
+    }
+</script>
 </html>
