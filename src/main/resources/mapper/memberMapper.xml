@@ -10,7 +10,8 @@
     </insert>
 
     <select id="login" parameterType="memberDTO" resultType="memberDTO">
-        select * from member_table where memberEmail = #{memberEmail} and memberPassword = #{memberPassword}
+        select * from member_table where memberEmail = #{memberEmail}
+                                     and memberPassword = #{memberPassword}
     </select>
 
     <select id="findAll" resultType="memberDTO">

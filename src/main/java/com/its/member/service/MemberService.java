@@ -15,13 +15,13 @@ public class MemberService {
         memberRepository.save(memberDTO);
     }
 
-    public MemberDTO login(MemberDTO memberDTO) {
+    public boolean login(MemberDTO memberDTO) {
         MemberDTO result = memberRepository.login(memberDTO);
-
-
-
-
-        return result;
+        if(result  != null){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import java.lang.reflect.Member;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class MemberController {
 //        if(saveResult){
 //            return "memberLogin";
 //        }else{
-//            return "memberSave";
+//            return "index";
 //        }
     }
 
@@ -42,11 +43,18 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute MemberDTO memberDTO, Model model){
-        MemberDTO memberDTOReturn = memberService.login(memberDTO);
-        model.addAttribute("member", memberDTOReturn);
+    public String login(@ModelAttribute MemberDTO memberDTO, Model model, HttpSession session){
+        boolean memberDTOReturn = memberService.login(memberDTO);
 
-        return "memberMain";
+        if(memberDTOReturn){
+            //세션에 로그인한 사용자의 이메일 저장
+            session.setAttribute("loginEmail", memberDTO.getMemberEmail());
+            model.addAttribute("modelEmail", memberDTO.getMemberEmail());
+            return "memberMain";
+
+        }else{
+            return "memberLogin";
+        }
     }
 
     @GetMapping("/members")

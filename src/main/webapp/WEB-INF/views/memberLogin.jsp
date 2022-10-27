@@ -12,10 +12,12 @@
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
+<div class="container">
 <form action="/login" method="post">
-    <input type="text" name="memberEmail" placeholder="이메일 입력"><br>
-    <input type="password" name="memberPassword" placeholder="비밀번호 입력"><br>
-    <input type="submit" value="로그인">
+    <input type="text" name="memberEmail" placeholder="이메일 입력" class="form-control"><br>
+    <input type="password" name="memberPassword" placeholder="비밀번호 입력" class="form-control"> <br>
+    <input type="submit" class="btn btn-primary" value="로그인">
 </form>
+</div>
 </body>
 </html>

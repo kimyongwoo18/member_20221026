@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
+<h2>${sessionScope.loginEmail} 님 환영합니다.</h2>
+<h2>model값 : ${modelEmail}</h2>
 
     <a href="/save" class="form-control">회원가입</a><br>
     <a href="/login" class="form-control">로그인</a><br>
