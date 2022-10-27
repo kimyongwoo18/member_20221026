@@ -28,6 +28,12 @@ public class MemberController {
     public String save(@ModelAttribute MemberDTO memberDTO){
         memberService.save(memberDTO);
         return "memberLogin";
+//        boolean saveResult = memberService.save(memberDTO);
+//        if(saveResult){
+//            return "memberLogin";
+//        }else{
+//            return "memberSave";
+//        }
     }
 
     @GetMapping("/login")

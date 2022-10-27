@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>memberUpdate</title>
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
 <form action="/update?id=${id}" method="post">

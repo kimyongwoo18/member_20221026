@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>memberMain</title>
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
     <h2>${member.memberName}님 환영합니다.</h2>
