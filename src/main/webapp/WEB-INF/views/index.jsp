@@ -10,8 +10,10 @@
 <head>
     <title>index.jsp</title>
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+
 </head>
 <body>
+<div class="container text-center" id="123">
 <h2>${sessionScope.loginEmail} 님 환영합니다.</h2>
 <h2>model값 : ${modelEmail}</h2>
 
@@ -22,7 +24,7 @@
     <button class="btn btn-primary" onclick="saveFn()">회원가입</button>
     <button class="btn btn-danger" onclick="loginFn()">로그인</button>
     <button class="btn btn-dark" onclick="listFn()">회원목록</button>
-
+</div>
 </body>
 <script>
     /*자바스크립트를 이용해서 get방식으로 주소를 요청하는 방법*/

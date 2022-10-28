@@ -121,10 +121,15 @@ public class MemberController {
         }else{
             return "index";
         }
-
-
     }
 
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        //세션을 없애는 명령어.
+
+        return "index";
+    }
 
 
 }
