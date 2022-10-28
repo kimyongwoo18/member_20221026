@@ -45,7 +45,8 @@
       <td>${member.memberMobile}</td>
     </tr>
   </table>
+  <a href="/" class="form-control text-center">index.jsp</a>
 </div>
-  <a href="/">index.jsp</a>
+
 </body>
 </html>

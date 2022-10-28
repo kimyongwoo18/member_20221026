@@ -35,10 +35,6 @@ public class MemberService {
 
 
 
-    public MemberDTO updatePassword(MemberDTO memberDTO) {
-        return memberRepository.updatePassword(memberDTO);
-    }
-
     public boolean delete(Long id) {
         int deleteResult = memberRepository.delete(id);
         if(deleteResult != 0){
@@ -46,5 +42,14 @@ public class MemberService {
         }else{
             return false;
         }
+    }
+
+
+    public MemberDTO update(MemberDTO memberDTO) {memberRepository.update(memberDTO);
+        return memberDTO;
+    }
+
+    public MemberDTO updateInfo(String memberEmail) {
+        return memberRepository.updateInfo(memberEmail);
     }
 }

@@ -49,7 +49,6 @@ public class MemberController {
         if(memberDTOReturn){
             //세션에 로그인한 사용자의 이메일 저장
             session.setAttribute("loginEmail", memberDTO.getMemberEmail());
-            model.addAttribute("modelEmail", memberDTO.getMemberEmail());
             return "memberMain";
 
         }else{
@@ -98,11 +97,26 @@ public class MemberController {
             return "index";
         }
     }
-
-    @PostMapping("/update")
-    public String update(@RequestParam("id") MemberDTO memberDTO, Model model){
-    MemberDTO member = memberService.updatePassword(memberDTO);
+    /*update()
+    * 매개변수 없이
+    * 리턴을 DTO로 받아와서 뿌려준다. 그리고 세션을 이용한다.*/
+    @GetMapping("/update")
+    public String updateForm(HttpSession session ,Model model){
+        //session값 가져오기  //session.getAttribute 의 리턴은 object고 우리가 원하는 변수는 String이므로
+                            //String으로 강제형변환을 시켜준다.
+        String memberEmail = (String) session.getAttribute("loginEmail");
+        // memberEmail로 DB에서 해당 회원의 전체 정보 조회
+    MemberDTO member = memberService.updateInfo(memberEmail);
     model.addAttribute("member", member);
+
+
+        return "memberUpdate";
+    }
+    @PostMapping("/update")
+    public String update(@ModelAttribute MemberDTO memberDTO,Model model){
+        MemberDTO member = memberService.update(memberDTO);
+        model.addAttribute("member", member);
+
         return "memberDetail";
     }
 

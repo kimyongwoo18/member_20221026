@@ -26,7 +26,12 @@
         delete from member_table where id = #{id}
     </delete>
 
-    <update id="updatePassword" parameterType="memberDTO">
-        update member_table set memberPassword = #{memberPassword} where id = #{id}
+    <update id="update" parameterType="memberDTO">
+        update member_table set memberEmail = #{memberEmail} , memberPassword = #{memberPassword} where id = #{id}
     </update>
+
+    <select id="updateInfo" parameterType="String" resultType="memberDTO">
+        select * from member_table where memberEmail = #{memberEmail}
+    </select>
+
 </mapper>

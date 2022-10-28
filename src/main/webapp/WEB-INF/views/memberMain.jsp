@@ -14,12 +14,20 @@
 <body>
     <div class="container">
         <h2>${sessionScope.loginEmail} 님 환영합니다.</h2>
-        <h2>model값 : ${modelEmail}</h2>
-
-        <a href="/">go to index</a>
+            <button class="btn btn-warning" onclick="updateForm()">내정보 수정하기</button>
+            <button class="btn btn-warning" onclick="index()">go to index</button>
     </div>
 
 
 
 </body>
+<script>
+    /* /update 주소를 요청하는 update함수 */
+    const updateForm =()=>{
+        location.href = "/update";
+    }
+    const index =()=>{
+        location.href = "/index";
+    }
+</script>
 </html>
