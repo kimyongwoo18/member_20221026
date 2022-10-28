@@ -27,7 +27,7 @@
     </delete>
 
     <update id="update" parameterType="memberDTO">
-        update member_table set memberEmail = #{memberEmail} , memberPassword = #{memberPassword} where id = #{id}
+        update member_table set memberEmail = #{memberEmail}, memberAge = #{memberAge} , memberName = #{memberName} , memberPassword = #{memberPassword} where id = #{id}
     </update>
 
     <select id="updateInfo" parameterType="String" resultType="memberDTO">

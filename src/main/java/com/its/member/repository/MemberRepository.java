@@ -41,8 +41,8 @@ public class MemberRepository {
     }
 
 
-    public void update(MemberDTO memberDTO) {
-        sql.update("member.update", memberDTO);
+    public int update(MemberDTO memberDTO) {
+        return sql.update("member.update", memberDTO);
     }
 
     public MemberDTO updateInfo(String memberEmail) {

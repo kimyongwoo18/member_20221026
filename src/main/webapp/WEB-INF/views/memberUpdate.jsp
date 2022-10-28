@@ -39,10 +39,11 @@
         /*
         * 사용자가 input 태그에 입력한 비밀번호와 DB에서 가져온 비밀번호가 일치하면 수정 요청을 보내고
         * 일치하지 않으면 alert으로 비밀번호가 일치하지 않습니다 출력
+        * document.getElementById("aaaa").value;
         * */
         if(document.updateForm.beforePassword.value != passwordDB){
             alert("기존 비밀번호가 일치하지않습니다.")
-            return false;
+
         }else {
             document.updateForm.submit();
         }
